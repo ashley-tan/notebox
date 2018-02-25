@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Write Things Down{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico|Poiret+One" rel="stylesheet">
+    <link href="/static/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navigation">        
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% endif %}
+    </div>
+
+    <div class="box">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

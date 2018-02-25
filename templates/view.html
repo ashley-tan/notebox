@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% from "macros.html" import render_field %}
+
+{% block content %}
+    <div class="magnified-notes">
+        <p>{{ view.text }}</p>
+        <a href="{{ url_for('home') }}">Back</a>
+    </div>
+{% endblock %}
